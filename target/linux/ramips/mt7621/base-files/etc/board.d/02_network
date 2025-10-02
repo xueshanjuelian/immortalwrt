@@ -327,6 +327,12 @@ ramips_setup_macs()
 		lan_mac=$(mtd_get_mac_ascii Config mac)
 		label_mac=$lan_mac
 		;;
+	zte,e8820s)
+		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
+		;;
+	zte,e8820v2)
+		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
+		;;
 	netgear,wax202)
 		lan_mac=$(mtd_get_mac_ascii Config mac)
 		wan_mac=$(macaddr_add "$lan_mac" 1)
