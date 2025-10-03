@@ -91,7 +91,6 @@
     };
 };
 
-
 &pcie {
     status = "okay";
 };
