@@ -3629,7 +3629,7 @@ TARGET_DEVICES += zio_freezio
 
 define Device/zte_e8820s
   $(Device/dsa-migration)
-  IMAGE_SIZE := 65216k
+  IMAGE_SIZE := 32448k
   DEVICE_VENDOR := zte
   DEVICE_MODEL := e8820s
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
