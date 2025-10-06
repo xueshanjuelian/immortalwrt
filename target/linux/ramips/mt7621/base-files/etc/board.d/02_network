@@ -11,7 +11,6 @@ ramips_setup_interfaces()
 	alfa-network,ax1800rm|\
 	ampedwireless,ally-r1900k|\
 	asus,rt-ax53u|\
-	gehua,ghl-r-001|\
 	h3c,tx1800-plus|\
 	h3c,tx1801-plus|\
 	h3c,tx1806|\
@@ -30,6 +29,10 @@ ramips_setup_interfaces()
 	z-router,zr-2660|\
 	zyxel,wsm20)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" "wan"
+		;;
+	gehua,ghl-r-001|\
+	zte,e8820s)
+		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
 		;;
 	arcadyan,we420223-99)
 		ucidef_set_interface_lan "swp0 swp1"
