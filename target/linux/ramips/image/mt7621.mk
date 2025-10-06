@@ -3074,16 +3074,6 @@ define Device/zio_freezio
 endef
 TARGET_DEVICES += zio_freezio
 
-define Device/zte_e8820s
-  $(Device/dsa-migration)
-  IMAGE_SIZE := 130752k
-  DEVICE_VENDOR := ZTE
-  DEVICE_MODEL := e8820s
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
-	kmod-usb-ledtrig-usbport -uboot-envtools
-endef
-TARGET_DEVICES += zte_e8820s
-
 define Device/zyxel_lte3301-plus
   $(Device/nand)
   DEVICE_VENDOR := ZyXEL
