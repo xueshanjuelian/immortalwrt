@@ -1127,7 +1127,7 @@ TARGET_DEVICES += dual-q_h721
 define Device/d-team_newifi-d2
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
-  IMAGE_SIZE := 32448k
+  IMAGE_SIZE := 130752k
   DEVICE_VENDOR := D-Team
   DEVICE_MODEL := Newifi D2
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
@@ -1426,7 +1426,7 @@ TARGET_DEVICES += firefly_firewrt
 
 define Device/gehua_ghl-r-001
   $(Device/dsa-migration)
-  IMAGE_SIZE := 32448k
+  IMAGE_SIZE := 130752k
   DEVICE_VENDOR := GeHua
   DEVICE_MODEL := GHL-R-001
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
@@ -1947,7 +1947,7 @@ TARGET_DEVICES += keenetic_kn-3510
 define Device/lenovo_newifi-d1
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
-  IMAGE_SIZE := 32448k
+  IMAGE_SIZE := 130752k
   DEVICE_VENDOR := Lenovo
   DEVICE_MODEL := Newifi D1
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-mmc-mtk \
@@ -3653,18 +3653,12 @@ endef
 TARGET_DEVICES += zio_freezio
 
 define Device/zte_e8820s
-  $(Device/nand)
-  $(Device/uimage-lzma-loader)
+  $(Device/dsa-migration)
+  IMAGE_SIZE := 130752k
   DEVICE_VENDOR := ZTE
   DEVICE_MODEL := E8820S
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
-	kmod-usb-ledtrig-usbport automount
-  DEVICE_COMPAT_VERSION := 2.0
-  DEVICE_COMPAT_MESSAGE := Partition table has changed to fit the new U-Boot
-  IMAGE_SIZE := 121728k
-  IMAGES += factory.bin
-  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
-	check-size
+	kmod-usb-ledtrig-usbport -uboot-envtools
 endef
 TARGET_DEVICES += zte_e8820s
 
